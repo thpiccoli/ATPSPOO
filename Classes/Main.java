@@ -15,9 +15,14 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    
+    static TelaInicial T;    
+    static Data data;
+    
     public static void main(String[] args) {
-        TelaInicial T = new TelaInicial();
-            T.setVisible(true);
+        data = new Data();
+        T = new TelaInicial();
+        T.setVisible(true);
     }
     
 }

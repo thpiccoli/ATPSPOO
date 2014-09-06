@@ -11,17 +11,19 @@ package poo2;
  * @author PauloMagno
  */
 public class Equipamento {
+
+        
     private int idSequencial;
-    private int codigoPatrimonial;// Gerado a partir da junção do IdSequencial e do AnoAquisição.
+    private String codigoPatrimonial;// Gerado a partir da junção do IdSequencial e do AnoAquisição.
     private String tipoEquipamento; //Portatil ou fixo
-    private String[] acessorios;
+    private String acessorios;
     private String tipoUso; //Coletivo ou individual
     private String acessoRede; //Wireless, radio, fixo
     //Se tipoUso individual
     private int matricula;
     //Se tipoUso Coletivo
-    private int CentroCusto = 4361;
-    private int anoAquisicao;
+    private int CentroCusto;
+    private int anoAquisicao; 
 
 
     public int getIdSequencial() {
@@ -32,11 +34,11 @@ public class Equipamento {
         this.idSequencial = idSequencial;
     }
 
-    public int getCodigoPatrimonial() {
+    public String getCodigoPatrimonial() {
         return codigoPatrimonial;
     }
 
-    public void setCodigoPatrimonial(int codigoPatrimonial) {
+    public void setCodigoPatrimonial(String codigoPatrimonial) {
         this.codigoPatrimonial = codigoPatrimonial;
     }
 
@@ -48,11 +50,11 @@ public class Equipamento {
         this.tipoEquipamento = tipoEquipamento;
     }
 
-    public String[] getAcessorios() {
+    public String getAcessorios() {
         return acessorios;
     }
 
-    public void setAcessorios(String[] acessorios) {
+    public void setAcessorios(String acessorios) {
         this.acessorios = acessorios;
     }
 

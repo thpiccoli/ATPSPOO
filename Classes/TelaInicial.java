@@ -215,7 +215,7 @@ public class TelaInicial extends javax.swing.JFrame {
         
         CadastroEquipamento Cad = new CadastroEquipamento();
         Cad.setVisible(true);
-        setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_jMenu_EquipNovoActionPerformed
 
     /**

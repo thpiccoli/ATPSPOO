@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package atps.poo2;
+package poo2;
 
 /**
  *
@@ -16,7 +16,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        TelaInicial T = new TelaInicial();
+            T.setVisible(true);
     }
     
 }

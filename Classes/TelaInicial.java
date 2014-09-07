@@ -118,6 +118,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu3.add(jMenu_EquipAtt);
 
         jMenu_EquipExcluir.setText("Excluir");
+        jMenu_EquipExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_EquipExcluirActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenu_EquipExcluir);
 
         Jmenu.add(jMenu3);
@@ -229,6 +234,12 @@ public class TelaInicial extends javax.swing.JFrame {
         Att.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu_EquipAttActionPerformed
+
+    private void jMenu_EquipExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_EquipExcluirActionPerformed
+        TelaEquipamentoAtualizacao Att = new TelaEquipamentoAtualizacao();
+        Att.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu_EquipExcluirActionPerformed
 
     /**
      * @param args the command line arguments

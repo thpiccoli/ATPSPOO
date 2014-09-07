@@ -8,17 +8,18 @@ package poo2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
- *
+ *  
  * @author Diego Itacolomy
  */
 public class Data {
     
        
     private final List<Equipamento> dataEquipamento = new ArrayList<>();
-    private List<Colaborador> dataColaborador = new ArrayList<>();
-    private Software[] dataSoftware;
+    private final List<Colaborador> dataColaborador = new ArrayList<>();
+    private Software[] dataSoftware;    
     private Departamento[] dataDepartamento;
     private int equipamentoCont = 0;
     private int softwareCont = 0;
@@ -40,10 +41,13 @@ public class Data {
             }
 
         }
-    }
- 
+    }  
+    
+    
     /**
-     *
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1
      * @param equipamento - enviar o objeto do tipo equipamento para ser cadastrado //Diego Itacolomy    
      */
     public void addEquipamento (Equipamento equipamento){
@@ -67,7 +71,9 @@ public class Data {
     
     
      /**
-     * Sobrecarga 
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1 
      * @param id - enviar o numero do ID do equipamento que devera ser encontrado //Diego Itacolomy
      * @return the dataEquipamento - retorna um objeto do tipo equipamento que corresponda o ID do parametro enviado.  //Diego Itacolomy
      */
@@ -90,6 +96,9 @@ public class Data {
     
         
     /**
+     * @Author Diego Itacolomy
+     * @Date 07/09/2014
+     * @versao 1
      * @return the dataEquipamento - como array. //Diego Itacolomy
      */
     public Equipamento[] getDataEquipamentoArray() {
@@ -119,6 +128,21 @@ public class Data {
         this.dataSoftware[i] = dataSoftware;
     }
 
+    /**
+     * @param i
+     * @return the dataColaborador
+     */
+    public Colaborador getDataColaborador(int i) {
+        return dataColaborador[i];
+    }
+
+    /**
+     * @param dataColaborador the dataColaborador to set
+     * @param i
+     */
+    public void setDataColaborador(Colaborador dataColaborador, int i) {
+        this.dataColaborador[i] = dataColaborador;
+    }
 
     /**
      * @param i
@@ -161,7 +185,23 @@ public class Data {
     public void setSoftwareCont() {
         this.softwareCont++;
     }
+    
+   /**
+     * @return the dataColaborador
+     */
+    public List<Colaborador> getDataColaborador() {
+        return dataColaborador;
+    }
 
+    /**
+     * @param dataColaborador the dataColaborador to set
+     */
+    public void setDataColaborador(Colaborador dataColaborador) {
+        getDataColaborador().add(dataColaborador);
+    }
+
+    
+    
     /**
      * @return the colaboradorCont
      */
@@ -186,20 +226,6 @@ public class Data {
      */
     public void setDepartamentoCont() {
         this.departamentoCont++;
-    }
-
-    /**
-     * @return the dataColaborador
-     */
-    public List<Colaborador> getDataColaborador() {
-        return dataColaborador;
-    }
-
-    /**
-     * @param dataColaborador the dataColaborador to set
-     */
-    public void setDataColaborador(Colaborador dataColaborador) {
-        getDataColaborador().add(dataColaborador);
     }
 
     

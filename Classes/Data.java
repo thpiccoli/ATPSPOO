@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  
- * @author Diego Itacolomy
+ *
+ * @author Diego
  */
 public class Data {
     
@@ -24,27 +24,26 @@ public class Data {
     private int softwareCont = 0;
     private int colaboradorCont = 0;
     private int departamentoCont = 0;
-
-    /**
-     * @Author Diego Itacolomy
-     * @Date 06/09/2014
-     * @versao 1
-     * @param equipamento - enviar o objeto do tipo equipamento para ser cadastrado //Diego Itacolomy    
-     */
+       
+    public void addColaborador(Colaborador colaborador){// vai adicionar colaboradores a lista.
+      int cont = 0;
+        for (Colaborador C : dataColaborador) {
+                if(C.getMatricula()==cont){
+                    
+                }
+            
+        }
+        
+    
+    }
     public void addEquipamento (Equipamento equipamento){
-        int cont =1;
-        for(Equipamento eq : getDataEquipamento()){
+        int cont =0;
+        for(Equipamento eq : dataEquipamento){
             if(eq.getAnoAquisicao() == equipamento.getAnoAquisicao()){
                 cont++;
             }
         }
-        if(cont < 10){
-            equipamento.setCodigoPatrimonial(equipamento.getAnoAquisicao()+"00"+cont); //Seta codigo patrimonial
-        }else if (cont < 100){
-            equipamento.setCodigoPatrimonial(equipamento.getAnoAquisicao()+"0"+cont); //Seta codigo patrimonial
-        }else{
-            equipamento.setCodigoPatrimonial(equipamento.getAnoAquisicao()+""+cont); //Seta codigo patrimonial
-        }
+        equipamento.setCodigoPatrimonial(equipamento.getAnoAquisicao()+""+cont); //Seta codigo patrimonial
         equipamento.setIdSequencial(getEquipamentoCont());
         setDataEquipamento(equipamento);
         setEquipamentoCont();        
@@ -52,47 +51,24 @@ public class Data {
     
     
      /**
-     * @Author Diego Itacolomy
-     * @Date 06/09/2014
-     * @versao 1 
-     * @param id - enviar o numero do ID do equipamento que devera ser encontrado //Diego Itacolomy
-     * @return the dataEquipamento - retorna um objeto do tipo equipamento que corresponda o ID do parametro enviado.  //Diego Itacolomy
+     * @param id
+     * @return the dataEquipamento
      */
     public Equipamento getDataEquipamento(int id) {
-        for(int i = 0; i < getDataEquipamento().size(); i++) {
-            Equipamento equip = getDataEquipamento().get(i);
+        for(int i = 0; i < dataEquipamento.size(); i++) {
+            Equipamento equip = dataEquipamento.get(i);
             if(equip.getIdSequencial() == id){
                 return equip;
             }
         }        
         return null;
     }
+   
     
-    /**
-     * @return the dataEquipamento
-     */
-    public List<Equipamento> getDataEquipamento() {
-        return dataEquipamento;
-    }
-    
-        
-    /**
-     * @Author Diego Itacolomy
-     * @Date 07/09/2014
-     * @versao 1
-     * @return the dataEquipamento - como array. //Diego Itacolomy
-     */
-    public Equipamento[] getDataEquipamentoArray() {
-        
-        Equipamento []equipamento = new Equipamento[getDataEquipamento().size()];
-        getDataEquipamento().toArray(equipamento);
-        return equipamento;    
-        
-    }
-    
-    
+
+ 
     public void setDataEquipamento(Equipamento a) {
-        getDataEquipamento().add(a);
+        dataEquipamento.add(a);
         
     }
 
@@ -192,10 +168,6 @@ public class Data {
     public void setDepartamentoCont() {
         this.departamentoCont++;
     }
-
-    
-
-    
     
     
 }

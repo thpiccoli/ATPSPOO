@@ -8,7 +8,7 @@ package poo2;
 
 /**
  *
- * @author Diego Itacolomy
+ * @author Diego
  */
 public class Departamento {
     

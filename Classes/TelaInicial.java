@@ -143,6 +143,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu7.setText("Colaborador");
 
         jMenu_ColabNovo.setText("Novo");
+        jMenu_ColabNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_ColabNovoActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenu_ColabNovo);
 
         jMenu_ColabAtt.setText("Alterar");
@@ -240,6 +245,12 @@ public class TelaInicial extends javax.swing.JFrame {
         Att.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu_EquipExcluirActionPerformed
+
+    private void jMenu_ColabNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ColabNovoActionPerformed
+        TelaColaboradorCadastro Tcc = new TelaColaboradorCadastro();
+        Tcc.setVisible(true);
+        this.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jMenu_ColabNovoActionPerformed
 
     /**
      * @param args the command line arguments

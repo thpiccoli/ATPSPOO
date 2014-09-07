@@ -132,16 +132,18 @@ public class Data {
      * @param i
      * @return the dataColaborador
      */
-    public Colaborador getDataColaborador(int i) {
-        return dataColaborador[i];
+     public List<Colaborador> getDataColaborador() {
+        return dataColaborador;
+    }
+    public Colaborador[] getDataColaboradorArray() {
+        Colaborador []colaborador = new Colaborador[getDataColaborador().size()];
+        getDataColaborador().toArray(colaborador);
+        return colaborador;
     }
 
-    /**
-     * @param dataColaborador the dataColaborador to set
-     * @param i
-     */
-    public void setDataColaborador(Colaborador dataColaborador, int i) {
-        this.dataColaborador[i] = dataColaborador;
+
+    public void setDataColaborador(Colaborador col) {
+       getDataColaborador().add(col);
     }
 
     /**
@@ -184,20 +186,6 @@ public class Data {
      */
     public void setSoftwareCont() {
         this.softwareCont++;
-    }
-    
-   /**
-     * @return the dataColaborador
-     */
-    public List<Colaborador> getDataColaborador() {
-        return dataColaborador;
-    }
-
-    /**
-     * @param dataColaborador the dataColaborador to set
-     */
-    public void setDataColaborador(Colaborador dataColaborador) {
-        getDataColaborador().add(dataColaborador);
     }
 
     

@@ -15,23 +15,35 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
     /**
      * Creates new form TelaEquipamentoAtualizacao
      */
-    
     private String[] popularListModel(){
         String[] equipamentosCodigos = new String[Main.data.getDataEquipamentoArray().length] ;
         int i = 0;
         for (Equipamento equip : Main.data.getDataEquipamentoArray()) {
             equipamentosCodigos[i] = equip.getCodigoPatrimonial();
             i++;
-        }
-        
+        } 
         return equipamentosCodigos;
     }
     
+    private String[] popularListModel(String codigo){
+        String[] equipamentosCodigos = new String[Main.data.getDataEquipamentoArray().length] ;
+        int i = 0;
+        for (Equipamento equip : Main.data.getDataEquipamentoArray()) {
+            if(equip.getCodigoPatrimonial().indexOf(codigo) != -1 ){
+                equipamentosCodigos[i] = equip.getCodigoPatrimonial();
+            }            
+            i++;
+        } 
+        return equipamentosCodigos;
+    }
+    
+    
+    
     public TelaEquipamentoAtualizacao() {
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);        
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +59,7 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
         textField_pesquisa = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btn_Pesquisar = new javax.swing.JButton();
+        btn_listarTodos = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -69,6 +82,13 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
             }
         });
 
+        btn_listarTodos.setText("Listar Todos");
+        btn_listarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listarTodosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -77,13 +97,15 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textField_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_Pesquisar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_listarTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_Pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -96,7 +118,9 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
                     .addComponent(textField_pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(btn_Pesquisar))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_listarTodos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(list_resultPesquisa);
@@ -127,7 +151,7 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btn_cancelar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -179,8 +203,8 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
         
         //textField_pesquisa
        
+       list_resultPesquisa.setListData(popularListModel(textField_pesquisa.getText()));
         
-       list_resultPesquisa.setListData(popularListModel()); 
       //System.out.println( );
         
     }//GEN-LAST:event_btn_PesquisarActionPerformed
@@ -189,6 +213,10 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
         Main.T.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_listarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarTodosActionPerformed
+        list_resultPesquisa.setListData(popularListModel());
+    }//GEN-LAST:event_btn_listarTodosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,10 +252,13 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Pesquisar;
     private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_listarTodos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -239,3 +270,4 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
     private javax.swing.JTextField textField_pesquisa;
     // End of variables declaration//GEN-END:variables
 }
+

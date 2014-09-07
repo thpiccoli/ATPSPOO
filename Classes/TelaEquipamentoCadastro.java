@@ -10,13 +10,16 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author PauloMagno
+ * @author Paulo Magno
+ * @author Diego Itacolomy
  */
-public class CadastroEquipamento extends javax.swing.JFrame {
+public class TelaEquipamentoCadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroEquipamento
      */
+    
+    
     private Equipamento equipamento;
     
     private String tipoUso;
@@ -33,7 +36,8 @@ public class CadastroEquipamento extends javax.swing.JFrame {
         textField_acessorios.setText(""); 
     }
     
-    public CadastroEquipamento() {
+    public TelaEquipamentoCadastro() {
+        this.setLocationRelativeTo(null); 
         initComponents();
     }
 
@@ -77,10 +81,10 @@ public class CadastroEquipamento extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo de Rede:");
 
-        jComboBox_tipoEquip.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Portatil", "Fixo" }));
+        jComboBox_tipoEquip.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Portatil", "Fixo" }));
         jComboBox_tipoEquip.setToolTipText("");
 
-        jComboBox_tipoRede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fixo", "Radio", "Wireless" }));
+        jComboBox_tipoRede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Fixo", "Radio", "Wireless" }));
 
         RadioGroup_TipoUso.add(Rdio_individual);
         Rdio_individual.setText("Individual");
@@ -92,7 +96,7 @@ public class CadastroEquipamento extends javax.swing.JFrame {
 
         jLabel8.setText("Ano de Aquisição");
 
-        jComboBox_anoAquisicao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
+        jComboBox_anoAquisicao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
 
         jLabel9.setText("Matricula");
 
@@ -149,9 +153,7 @@ public class CadastroEquipamento extends javax.swing.JFrame {
                                         .addComponent(btn_Limpar)
                                         .addGap(28, 28, 28)
                                         .addComponent(btn_sair))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btn_cadastrar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btn_cadastrar)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel5)
@@ -263,6 +265,10 @@ public class CadastroEquipamento extends javax.swing.JFrame {
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
         
+        if(tipoUso == null || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_tipoEquip.getSelectedItem()) ){
+            JOptionPane.showMessageDialog(null, "Preencha os campos requeridos");
+        }else{       
+        
         equipamento = new Equipamento();        
         
         equipamento.setTipoUso(tipoUso);
@@ -284,7 +290,8 @@ public class CadastroEquipamento extends javax.swing.JFrame {
         
         Main.data.addEquipamento(equipamento);
         limparForm();
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+        JOptionPane.showMessageDialog(null, "Cadastrado realizado com sucesso");
+        }
         
     }//GEN-LAST:event_btn_cadastrarActionPerformed
 
@@ -310,20 +317,20 @@ public class CadastroEquipamento extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroEquipamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEquipamentoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroEquipamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEquipamentoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroEquipamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEquipamentoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroEquipamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEquipamentoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroEquipamento().setVisible(true);
+                new TelaEquipamentoCadastro().setVisible(true);
             }
         });
     }

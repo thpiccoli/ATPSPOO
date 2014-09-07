@@ -9,6 +9,7 @@ package poo2;
 /**
  *
  * @author PauloMagno
+ * @author Diego Itacolomy
  */
 public class Equipamento {
 

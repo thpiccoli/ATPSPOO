@@ -10,7 +10,7 @@ package poo2;
 
 /**
  *
- * @author Diego
+ * @author Diego Itacolomy
  */
 public class TelaInicial extends javax.swing.JFrame {
 
@@ -18,6 +18,7 @@ public class TelaInicial extends javax.swing.JFrame {
      * Creates new form TelaInicial
      */
     public TelaInicial() {
+        this.setLocationRelativeTo(null); 
         initComponents();
     }
 
@@ -109,9 +110,19 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu3.add(jMenu_EquipNovo);
 
         jMenu_EquipAtt.setText("Atualizar");
+        jMenu_EquipAtt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_EquipAttActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenu_EquipAtt);
 
         jMenu_EquipExcluir.setText("Excluir");
+        jMenu_EquipExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_EquipExcluirActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenu_EquipExcluir);
 
         Jmenu.add(jMenu3);
@@ -217,6 +228,18 @@ public class TelaInicial extends javax.swing.JFrame {
         Cad.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu_EquipNovoActionPerformed
+
+    private void jMenu_EquipAttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_EquipAttActionPerformed
+        TelaEquipamentoAtualizacao Att = new TelaEquipamentoAtualizacao();
+        Att.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu_EquipAttActionPerformed
+
+    private void jMenu_EquipExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_EquipExcluirActionPerformed
+        TelaEquipamentoAtualizacao Att = new TelaEquipamentoAtualizacao();
+        Att.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu_EquipExcluirActionPerformed
 
     /**
      * @param args the command line arguments

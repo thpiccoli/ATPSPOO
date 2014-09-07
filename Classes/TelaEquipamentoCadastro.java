@@ -10,13 +10,16 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author PauloMagno
+ * @author Paulo Magno
+ * @author Diego Itacolomy
  */
 public class TelaEquipamentoCadastro extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaEquipamentoCadastro
+     * Creates new form CadastroEquipamento
      */
+    
+    
     private Equipamento equipamento;
     
     private String tipoUso;
@@ -34,6 +37,7 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
     }
     
     public TelaEquipamentoCadastro() {
+        this.setLocationRelativeTo(null); 
         initComponents();
     }
 
@@ -77,10 +81,10 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo de Rede:");
 
-        jComboBox_tipoEquip.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Portatil", "Fixo" }));
+        jComboBox_tipoEquip.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Portatil", "Fixo" }));
         jComboBox_tipoEquip.setToolTipText("");
 
-        jComboBox_tipoRede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fixo", "Radio", "Wireless" }));
+        jComboBox_tipoRede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Fixo", "Radio", "Wireless" }));
 
         RadioGroup_TipoUso.add(Rdio_individual);
         Rdio_individual.setText("Individual");
@@ -92,7 +96,7 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
 
         jLabel8.setText("Ano de Aquisição");
 
-        jComboBox_anoAquisicao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
+        jComboBox_anoAquisicao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", " " }));
 
         jLabel9.setText("Matricula");
 
@@ -260,6 +264,15 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LimparActionPerformed
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+     /**
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1
+     * popula umm objeto do tipo Equipamento 
+     */
+        if(tipoUso == null || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_tipoEquip.getSelectedItem()) ){
+            JOptionPane.showMessageDialog(null, "Preencha os campos requeridos");
+        }else{       
         
         equipamento = new Equipamento();        
         
@@ -282,7 +295,8 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
         
         Main.data.addEquipamento(equipamento);
         limparForm();
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+        JOptionPane.showMessageDialog(null, "Cadastrado realizado com sucesso");
+        }
         
     }//GEN-LAST:event_btn_cadastrarActionPerformed
 

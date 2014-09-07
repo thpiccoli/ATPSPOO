@@ -8,7 +8,7 @@ package poo2;
 
 /**
  *
- * @author Diego
+ * @author Diego Itacolomy
  */
 public class Software {
     

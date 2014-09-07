@@ -12,12 +12,11 @@ import javax.swing.JOptionPane;
  * @author PauloMagno
  */
 public class TelaColaboradorCadastro extends javax.swing.JFrame {
+
     /**
-     * Creates new form TelaColaboradorCadastro
+     * Creates new form CadastroColaborador
      */
-    private Colaborador colaborador;
-    private int matricula;
-    private String areaTrabalho;
+    private int Matricula;
 
     public TelaColaboradorCadastro() {
         initComponents();
@@ -86,11 +85,6 @@ public class TelaColaboradorCadastro extends javax.swing.JFrame {
         TextField_Matricula.setEditable(false);
 
         btn_cadastrar.setText("Cadastrar");
-        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarActionPerformed(evt);
-            }
-        });
 
         btn_Limpar.setText("Limpar");
         btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
@@ -193,27 +187,19 @@ public class TelaColaboradorCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton_ExternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_ExternoActionPerformed
-        areaTrabalho=jRadioButton_Externo.getText();
+        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton_ExternoActionPerformed
 
     private void btn_GerarMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GerarMatriculaActionPerformed
-        int CodArea;
         if (TextField_Nome.getText().trim().equals("") || jRadioButton_Externo.isSelected() == false && jRadioButton_Interno.isSelected() == false) {
             JOptionPane.showMessageDialog(null, "Nome ou Local de Trabalho não preenchidos");
-        } else { 
-           
-            if(jRadioButton_Externo.isSelected()){
-                CodArea=101;
-            }else{
-                CodArea=202;
-            }
-            verificarMatricula();
-            TextField_Matricula.setText(Integer.toString(CodArea));
+        } else {
+
         }
     }//GEN-LAST:event_btn_GerarMatriculaActionPerformed
 
     private void jRadioButton_InternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_InternoActionPerformed
-        areaTrabalho=jRadioButton_Interno.getText();
+        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton_InternoActionPerformed
 
     private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
@@ -225,25 +211,13 @@ public class TelaColaboradorCadastro extends javax.swing.JFrame {
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_btn_CancelarActionPerformed
 
-    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
-        colaborador = new Colaborador();
-        colaborador.setNome(TextField_Nome.getText());
-        colaborador.setMatricula(Integer.parseInt(TextField_Matricula.getText()));
-        colaborador.setLocalTrabalho(areaTrabalho);
-        Main.data.addColaborador(colaborador);
-    }//GEN-LAST:event_btn_cadastrarActionPerformed
-
     public void limpar() {
         TextField_Matricula.setText("");
         TextField_Nome.setText("");
         jRadioButton_Externo.setSelected(false);
         jRadioButton_Interno.setSelected(false);
     }
-public void verificarMatricula(){
-    
-        
-    
-}
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

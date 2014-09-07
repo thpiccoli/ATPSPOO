@@ -25,6 +25,9 @@ public class Data {
     private int colaboradorCont = 0;
     private int departamentoCont = 0;
 
+    
+    
+    
     /**
      *
      * @param equipamento - enviar o objeto do tipo equipamento para ser cadastrado //Diego Itacolomy    

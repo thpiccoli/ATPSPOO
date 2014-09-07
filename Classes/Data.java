@@ -56,13 +56,18 @@ public class Data {
    
     
 
- 
+    /**taEquipamento the a to set
+     * @param a
+     */
     public void setDataEquipamento(Equipamento a) {
         dataEquipamento.add(a);
         
     }
 
- 
+    /**
+     * @param i
+     * @return the dataSoftware
+     */
     public Software getDataSoftware(int i) {
         return dataSoftware[i];
     }

@@ -17,8 +17,8 @@ public class Data {
     
        
     private final List<Equipamento> dataEquipamento = new ArrayList<>();
+    private List<Colaborador> dataColaborador = new ArrayList<>();
     private Software[] dataSoftware;
-    private Colaborador[] dataColaborador;
     private Departamento[] dataDepartamento;
     private int equipamentoCont = 0;
     private int softwareCont = 0;
@@ -27,7 +27,21 @@ public class Data {
 
     
     
-    
+    public void addColaborador(Colaborador colaborador, int tipotrabalho) {
+        int cont = 0;
+       int matricula;
+        for (Colaborador c : getDataColaborador()) {
+             matricula = cont + tipotrabalho;
+            if (c.getMatricula() == matricula) {
+                cont++;
+            } else {
+                colaborador.setMatricula(matricula);
+                setDataColaborador(colaborador);
+            }
+
+        }
+    }
+ 
     /**
      *
      * @param equipamento - enviar o objeto do tipo equipamento para ser cadastrado //Diego Itacolomy    
@@ -105,21 +119,6 @@ public class Data {
         this.dataSoftware[i] = dataSoftware;
     }
 
-    /**
-     * @param i
-     * @return the dataColaborador
-     */
-    public Colaborador getDataColaborador(int i) {
-        return dataColaborador[i];
-    }
-
-    /**
-     * @param dataColaborador the dataColaborador to set
-     * @param i
-     */
-    public void setDataColaborador(Colaborador dataColaborador, int i) {
-        this.dataColaborador[i] = dataColaborador;
-    }
 
     /**
      * @param i
@@ -187,6 +186,20 @@ public class Data {
      */
     public void setDepartamentoCont() {
         this.departamentoCont++;
+    }
+
+    /**
+     * @return the dataColaborador
+     */
+    public List<Colaborador> getDataColaborador() {
+        return dataColaborador;
+    }
+
+    /**
+     * @param dataColaborador the dataColaborador to set
+     */
+    public void setDataColaborador(Colaborador dataColaborador) {
+        getDataColaborador().add(dataColaborador);
     }
 
     

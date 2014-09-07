@@ -184,9 +184,20 @@ public class TelaColaboradorCadastro extends javax.swing.JFrame {
             colaborador = new Colaborador();
             colaborador.setNome(TextField_Nome.getText());
             colaborador.setLocalTrabalho(localTrabalho);
+            Main.data.addColaborador(colaborador , tipotrabalho());
         }
     }//GEN-LAST:event_btn_cadastrarActionPerformed
+public int tipotrabalho(){
+     int codTrabalho;
+    if(jRadioButton_Interno.isSelected()){
+        codTrabalho = 101;
+    }else{
+        codTrabalho=202;
+    }
+    return codTrabalho;
 
+
+}
     public void limpar() {
         TextField_Nome.setText("");
         jRadioButton_Externo.setSelected(false);

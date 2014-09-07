@@ -16,7 +16,6 @@ public class Equipamento {
         
     private int idSequencial;
     private String codigoPatrimonial;// Gerado a partir da junção do IdSequencial e do AnoAquisição.
-    private String DescricaoEquipamento;
     private String tipoEquipamento; //Portatil ou fixo
     private String acessorios;
     private String tipoUso; //Coletivo ou individual
@@ -98,19 +97,5 @@ public class Equipamento {
 
     public void setAnoAquisicao(int anoAquisicao) {
         this.anoAquisicao = anoAquisicao;
-    }
-
-    /**
-     * @return the DescricaoEquipamento
-     */
-    public String getDescricaoEquipamento() {
-        return DescricaoEquipamento;
-    }
-
-    /**
-     * @param DescricaoEquipamento the DescricaoEquipamento to set
-     */
-    public void setDescricaoEquipamento(String DescricaoEquipamento) {
-        this.DescricaoEquipamento = DescricaoEquipamento;
     }
 }

@@ -264,12 +264,7 @@ public class TelaEquipamentoCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LimparActionPerformed
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
-     /**
-     * @Author Diego Itacolomy
-     * @Date 06/09/2014
-     * @versao 1
-     * popula umm objeto do tipo Equipamento 
-     */
+        
         if(tipoUso == null || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_anoAquisicao.getSelectedItem()) || "selecione".equals((String)jComboBox_tipoEquip.getSelectedItem()) ){
             JOptionPane.showMessageDialog(null, "Preencha os campos requeridos");
         }else{       

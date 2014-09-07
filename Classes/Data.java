@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *  
  * @author Diego Itacolomy
  */
 public class Data {
@@ -26,7 +26,9 @@ public class Data {
     private int departamentoCont = 0;
 
     /**
-     *
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1
      * @param equipamento - enviar o objeto do tipo equipamento para ser cadastrado //Diego Itacolomy    
      */
     public void addEquipamento (Equipamento equipamento){
@@ -50,7 +52,9 @@ public class Data {
     
     
      /**
-     * Sobrecarga 
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1 
      * @param id - enviar o numero do ID do equipamento que devera ser encontrado //Diego Itacolomy
      * @return the dataEquipamento - retorna um objeto do tipo equipamento que corresponda o ID do parametro enviado.  //Diego Itacolomy
      */
@@ -73,6 +77,9 @@ public class Data {
     
         
     /**
+     * @Author Diego Itacolomy
+     * @Date 07/09/2014
+     * @versao 1
      * @return the dataEquipamento - como array. //Diego Itacolomy
      */
     public Equipamento[] getDataEquipamentoArray() {

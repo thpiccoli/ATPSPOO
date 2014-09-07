@@ -13,7 +13,21 @@ package poo2;
 public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
 
     /**
+     * @Author Diego Itacolomy
+     * @Date 06/09/2014
+     * @versao 1
      * Creates new form TelaEquipamentoAtualizacao
+     */
+    
+    
+    
+    
+    /**
+     * @Author Diego Itacolomy
+     * @Date 07/09/2014
+     * @versao 1
+     * Cria uma array de equipamentos com todos os equipamentos cadastrados
+     * @return retorna uma array de equipamentos 
      */
     private String[] popularListModel(){
         String[] equipamentosCodigos = new String[Main.data.getDataEquipamentoArray().length] ;
@@ -25,6 +39,13 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
         return equipamentosCodigos;
     }
     
+    /**
+     * @Author Diego Itacolomy
+     * @Date 07/09/2014
+     * @versao 1
+     * Cria uma array de equipamentos que tenham relação com o parametro enviado
+     * @return retorna uma array de equipamentos 
+     */
     private String[] popularListModel(String codigo){
         String[] equipamentosCodigos = new String[Main.data.getDataEquipamentoArray().length] ;
         int i = 0;
@@ -35,8 +56,7 @@ public class TelaEquipamentoAtualizacao extends javax.swing.JFrame {
             i++;
         } 
         return equipamentosCodigos;
-    }
-    
+    }    
     
     
     public TelaEquipamentoAtualizacao() {
